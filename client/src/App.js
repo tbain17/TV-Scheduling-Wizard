@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import ShowContainer from './containers/ShowContainer'
 
 function App() {
   return (
     <div className="App">
-    <h1>test</h1>
+    <h1>tests</h1>
+    <ShowContainer/>
     </div>
   );
 }
