@@ -12,3 +12,5 @@ const Show = ({show, onShowDelete,}) => {
     </div>
   );
 };
+
+export default Show;
