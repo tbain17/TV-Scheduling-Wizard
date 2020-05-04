@@ -8,6 +8,7 @@ class ShowContainer extends React.Component {
       shows: [],
       selectedShowName: ''
     }
+    this.handleShowSelected = this.handleShowSelected.bind(this);
   }
 
   componentDidMount() {
