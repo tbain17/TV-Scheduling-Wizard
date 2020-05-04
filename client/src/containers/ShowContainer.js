@@ -21,7 +21,7 @@ class ShowContainer extends React.Component {
   }
 
   handleShowSelected(name) {
-    this.setState({ selectedShowName: name})
+    this.setState({ selectedShowName: name })
   }
 
   onShowDelete() {
