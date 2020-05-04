@@ -1,6 +1,5 @@
 import React from 'react';
 
-export default Show;
 
 const Show = ({show, onShowDelete,}) => {
   const days = {show.schedule.days.map((day) => {return (day)})}
