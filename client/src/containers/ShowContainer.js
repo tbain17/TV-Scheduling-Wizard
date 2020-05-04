@@ -15,8 +15,12 @@ class ShowContainer extends React.Component {
     const url = 'http://api.tvmaze.com/shows';
 
     fetch(url)
-    .then(shows => this.setState({ shows: shows}))
+    .then(shows => this.setState({ shows: shows }))
     .catch(err => console.err);
+  }
+
+  handleShowSelected(name) {
+    this.setState({ selectedShowName: name})
   }
 
   render() {
