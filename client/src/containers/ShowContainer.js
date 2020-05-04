@@ -20,6 +20,12 @@ class ShowContainer extends React.Component {
 
   render() {
     const selectedShow = this.state.shows.find(show => show.name === this.state.selectedShowName)
+
+    return (
+      <div>
+      <h2>Show Container</h2>
+      </div>
+    )
   }
 }
 export default ShowContainer;
