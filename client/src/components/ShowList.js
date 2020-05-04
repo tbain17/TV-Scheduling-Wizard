@@ -1,7 +1,8 @@
 import React from 'react';
+import Show from './Show';
 
 const ShowList = ({ shows, onShowDelete }) => {
-  const showNodes = ShowList.map(show => (
+  const showNodes = shows.map(show => (
     <Show
     key={show._id}
     show={show}
