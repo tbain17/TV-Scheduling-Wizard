@@ -16,8 +16,9 @@ class ShowContainer extends React.Component {
     const url = 'http://api.tvmaze.com/shows';
 
     fetch(url)
+    .then(res => res.json())
     .then(shows => this.setState({ shows: shows }))
-    .catch(err => console.err);
+    .catch(err => console.error);
   }
 
   handleShowSelected(name) {
@@ -29,7 +30,7 @@ class ShowContainer extends React.Component {
   }
 
   render() {
-    // const selectedShow = this.state.shows.find(show => show.name === this.state.selectedShowName)
+    if (!this.state.shows.length) return null;
 
     return (
       <div>
@@ -39,7 +40,7 @@ class ShowContainer extends React.Component {
       onShowDelete={this.onShowDelete}
       />
       </div>
-    )
+    );
   }
 }
 export default ShowContainer;

@@ -1,5 +1,5 @@
 class Show {
-  static url = "http://localhost:3000/api/shows";
+  static url = "http://localhost:3001/api/shows";
 
   static get() {
     return fetch(this.url)
