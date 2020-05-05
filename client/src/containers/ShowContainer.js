@@ -11,11 +11,13 @@ class ShowContainer extends React.Component {
     this.state = {
       schedule: [],
       shows: [],
+      filteredShows: [],
       selectedShowName: ''
     }
     this.handleShowSelected = this.handleShowSelected.bind(this);
     this.onShowAdded = this.onShowAdded.bind(this);
     this.onScheduleDelete = this.onScheduleDelete.bind(this);
+    this.onTimeSelected = this.onTimeSelected.bind(this);
   }
 
   componentDidMount() {
@@ -39,8 +41,9 @@ class ShowContainer extends React.Component {
       .then(schedule => this.setState({ schedule }));
   }
 
-  onShowSelected() {
-     return null;
+  onTimeSelected(time) {
+     const filteredShows = this.state.shows.filter(show => show.schedule.time === time);
+     this.setState({filteredShows: filteredShows})
   }
 
   onShowAdded(showData) {
@@ -63,11 +66,12 @@ class ShowContainer extends React.Component {
      <h2>Show Container</h2>
      <ShowForm
      shows={this.state.shows}
-     onShowSelected={this.onShowSelected}
+     onTimeSelected={this.onTimeSelected}
      />
      <ShowList
      shows={this.state.shows}
      onShowAdded={this.onShowAdded}
+     filteredShows={this.state.filteredShows}
      />
      <ScheduleList
      schedule={this.state.schedule}
