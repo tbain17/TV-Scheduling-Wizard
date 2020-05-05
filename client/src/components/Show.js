@@ -1,4 +1,5 @@
 import React from 'react';
+  import '../containers/Showcontainer.css';
 
 const Show = ({show, onShowAdded}) => {
   return(

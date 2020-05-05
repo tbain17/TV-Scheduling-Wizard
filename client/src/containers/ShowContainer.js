@@ -3,6 +3,7 @@ import ShowList from '../components/ShowList'
 import ShowForm from '../components/ShowForm'
 import Schedule from '../Models/schedule';
 import ScheduleList from '../components/ScheduleList';
+import './Showcontainer.css';
 
 
 class ShowContainer extends React.Component {
@@ -11,10 +12,13 @@ class ShowContainer extends React.Component {
     this.state = {
       schedule: [],
       shows: [],
+      filteredShows: [],
       selectedShowName: ''
     }
     this.handleShowSelected = this.handleShowSelected.bind(this);
     this.onShowAdded = this.onShowAdded.bind(this);
+    this.onScheduleDelete = this.onScheduleDelete.bind(this);
+    this.onTimeSelected = this.onTimeSelected.bind(this);
   }
 
   componentDidMount() {
@@ -38,37 +42,59 @@ class ShowContainer extends React.Component {
       .then(schedule => this.setState({ schedule }));
   }
 
-  onShowSelected() {
-     return null;
+  onTimeSelected(time) {
+     const filteredShows = this.state.shows.filter(show => show.schedule.time === time);
+     this.setState({filteredShows: filteredShows})
   }
 
   onShowAdded(showData) {
-    Schedule.post(showData)
-    .then(addedShow => this.setState({
-      schedule: [...this.state.schedule, addedShow]
-    }));
+    const ids = this.state.schedule.map(show => {
+      return show.id
+    });
+    if (!ids.includes(showData.id)) {
+      Schedule.post(showData)
+        .then(addedShow => this.setState({
+          schedule: [...this.state.schedule, addedShow]
+        }))
+    };
   }
 
  render() {
    if (!this.state.shows.length) return null;
 
    return (
-     <div>
-     <h2>Show Container</h2>
-     <ShowForm
-     shows={this.state.shows}
-     onShowSelected={this.onShowSelected}
-     />
-     <ShowList
-     shows={this.state.shows}
-     onShowAdded={this.onShowAdded}
-     />
-     <ScheduleList
-     schedule={this.state.schedule}
-     onScheduleDelete={this.onScheduleDelete}
-     />
 
-     </div>
+     <section id="grid">
+          <div className="logo">
+          <header>LOGO</header>
+          </div>
+          <div className="show-form">
+            <ShowForm
+            shows={this.state.shows}
+            onShowSelected={this.onShowSelected}
+            />
+          </div>
+          <div className="show-list">
+            <ShowList
+            shows={this.state.shows}
+            onShowAdded={this.onShowAdded}
+            filteredShows={this.state.filteredShows}
+
+            />
+          </div>
+          <div className="schedule-list">
+            <ScheduleList
+            schedule={this.state.schedule}
+            onScheduleDelete={this.onScheduleDelete}
+            />
+            <h1>ScheduleList</h1>
+          </div>
+            <div className="footer">
+            </div>
+
+
+
+    </section>
    );
  }
 }
