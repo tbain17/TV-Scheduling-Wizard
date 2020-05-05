@@ -1,6 +1,8 @@
 import React from 'react';
 import ShowList from '../components/ShowList'
 import ShowForm from '../components/ShowForm'
+import Schedule from '../Models/schedule';
+
 
 class ShowContainer extends React.Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class ShowContainer extends React.Component {
       selectedShowName: ''
     }
     this.handleShowSelected = this.handleShowSelected.bind(this);
+    this.onShowAdded = this.onShowAdded.bind(this);
   }
 
   componentDidMount() {
@@ -20,6 +23,9 @@ class ShowContainer extends React.Component {
     .then(res => res.json())
     .then(shows => this.setState({ shows: shows }))
     .catch(err => console.error);
+
+    Schedule.get()
+    .then(schedule => this.setState({schedule}));
   }
 
   handleShowSelected(name) {
@@ -34,8 +40,11 @@ class ShowContainer extends React.Component {
      return null;
   }
 
-  onShowAdded() {
-     return null;
+  onShowAdded(showData) {
+    Schedule.post(showData)
+    .then(addedShow => this.setState({
+      schedule: [...this.state.schedule, addedShow]
+    }));
   }
 
  render() {

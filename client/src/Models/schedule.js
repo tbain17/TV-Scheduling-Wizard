@@ -1,5 +1,5 @@
-class Show {
-  static url = "http://localhost:3001/api/shows";
+class Schedule {
+  static url = "http://localhost:3001/api/schedule";
 
   static get() {
     return fetch(this.url)
@@ -21,4 +21,4 @@ class Show {
   }
 }
 
-export default Show;
+export default Schedule;
