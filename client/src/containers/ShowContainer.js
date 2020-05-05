@@ -2,6 +2,7 @@ import React from 'react';
 import ShowList from '../components/ShowList'
 import ShowForm from '../components/ShowForm'
 import Schedule from '../Models/schedule';
+import ScheduleList from '../components/ScheduleList';
 
 
 class ShowContainer extends React.Component {
@@ -32,8 +33,9 @@ class ShowContainer extends React.Component {
     this.setState({ selectedShowName: name })
   }
 
-  onShowDelete() {
-    return null;
+  onScheduleDelete(id) {
+    Schedule.delete(id)
+      .then(schedule => this.setState({ schedule }));
   }
 
   onShowSelected() {
@@ -60,6 +62,10 @@ class ShowContainer extends React.Component {
      <ShowList
      shows={this.state.shows}
      onShowAdded={this.onShowAdded}
+     />
+     <ScheduleList
+     schedule={this.state.schedule}
+     onScheduleDelete={this.onScheduleDelete}
      />
 
      </div>
