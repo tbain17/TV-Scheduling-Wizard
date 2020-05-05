@@ -5,9 +5,7 @@ import ShowContainer from './containers/ShowContainer'
 function App() {
   return (
     <body>
-    <div className="logo-banner">
-    <header>Logo</header>
-    </div>
+
     <div className="App">
     <ShowContainer/>
 

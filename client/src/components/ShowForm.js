@@ -1,5 +1,4 @@
 import React from 'react';
-import './ShowForm.css';
 
   const ShowForm = (props) => {
     let uniqueTimes = []
@@ -17,7 +16,7 @@ import './ShowForm.css';
   }
 
   return (
-    <body id="grid" className="show-form">
+    <body id="grid" >
     <select id="show-selector" onChange={handleChange} defaultValue="default">
       <option disabled value="default">Choose a time...</option>
       {options}
