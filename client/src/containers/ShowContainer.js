@@ -44,10 +44,15 @@ class ShowContainer extends React.Component {
   }
 
   onShowAdded(showData) {
-    Schedule.post(showData)
-    .then(addedShow => this.setState({
-      schedule: [...this.state.schedule, addedShow]
-    }));
+    const ids = this.state.schedule.map(show => {
+      return show.id
+    });
+    if (!ids.includes(showData.id)) {
+      Schedule.post(showData)
+        .then(addedShow => this.setState({
+          schedule: [...this.state.schedule, addedShow]
+        }))
+    };
   }
 
  render() {
