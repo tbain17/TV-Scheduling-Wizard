@@ -32,25 +32,29 @@ class ShowContainer extends React.Component {
 
   onShowSelected() {
      return null;
-   }
+  }
 
-   render() {
-     if (!this.state.shows.length) return null;
+  onShowAdded() {
+     return null;
+  }
 
-     return (
-       <div>
-       <h2>Show Container</h2>
-       <ShowForm
-       shows={this.state.shows}
-       onShowSelected={this.onShowSelected}
-       />
-       <ShowList
-       shows={this.state.shows}
-       onShowDelete={this.onShowDelete}
-       />
+ render() {
+   if (!this.state.shows.length) return null;
 
-       </div>
-     );
-   }
+   return (
+     <div>
+     <h2>Show Container</h2>
+     <ShowForm
+     shows={this.state.shows}
+     onShowSelected={this.onShowSelected}
+     />
+     <ShowList
+     shows={this.state.shows}
+     onShowAdded={this.onShowAdded}
+     />
+
+     </div>
+   );
  }
+}
  export default ShowContainer;
