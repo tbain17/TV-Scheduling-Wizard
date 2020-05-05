@@ -2,6 +2,7 @@ import React from 'react';
 import ShowList from '../components/ShowList'
 import ShowForm from '../components/ShowForm'
 import Schedule from '../Models/schedule';
+import ScheduleList from '../components/ScheduleList';
 
 
 class ShowContainer extends React.Component {
