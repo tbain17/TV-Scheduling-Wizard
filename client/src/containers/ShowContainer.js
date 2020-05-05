@@ -32,7 +32,7 @@ class ShowContainer extends React.Component {
     this.setState({ selectedShowName: name })
   }
 
-  onShowDelete() {
+  onScheduleDelete() {
     return null;
   }
 
@@ -60,6 +60,10 @@ class ShowContainer extends React.Component {
      <ShowList
      shows={this.state.shows}
      onShowAdded={this.onShowAdded}
+     />
+     <ScheduleList
+     schedule={this.state.schedule}
+     onScheduleDelete={this.onScheduleDelete}
      />
 
      </div>
