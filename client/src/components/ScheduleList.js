@@ -2,11 +2,11 @@ import React from 'react';
 import ScheduleItem from './ScheduleItem';
 
 const ScheduleList = ({ schedule, onScheduleDelete }) => {
-  const scheduleItemNodes = schedule.map(schedule => (
+  const scheduleItemNodes = schedule.map(scheduleItem => (
     <ScheduleItem
     key={scheduleItem._id}
     show={scheduleItem}
-    onShowAdded={onScheduleDelete}></ScheduleItem>
+    onScheduleDelete={onScheduleDelete}></ScheduleItem>
   ));
 
   return (
