@@ -4,11 +4,15 @@ import ShowContainer from './containers/ShowContainer'
 
 function App() {
   return (
+    <body>
+    <div className="logo-banner">
+    <header>Logo</header>
+    </div>
     <div className="App">
-    <h1>tests</h1>
     <ShowContainer/>
 
     </div>
+    </body>
   );
 }
 

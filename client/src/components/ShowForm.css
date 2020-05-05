@@ -1,0 +1,7 @@
+.show-form {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 10fr 10fr;
+  width: 15%;
+  padding: 50px;
+}
