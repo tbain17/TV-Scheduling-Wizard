@@ -1,5 +1,6 @@
 import React from 'react';
 import ShowList from '../components/ShowList'
+import ShowForm from '../components/ShowForm'
 
 class ShowContainer extends React.Component {
   constructor(props) {
@@ -29,18 +30,27 @@ class ShowContainer extends React.Component {
     return null;
   }
 
-  render() {
-    if (!this.state.shows.length) return null;
+  onShowSelected() {
+     return null;
+   }
 
-    return (
-      <div>
-      <h2>Show Container</h2>
-      <ShowList
-      shows={this.state.shows}
-      onShowDelete={this.onShowDelete}
-      />
-      </div>
-    );
-  }
-}
-export default ShowContainer;
+   render() {
+     if (!this.state.shows.length) return null;
+
+     return (
+       <div>
+       <h2>Show Container</h2>
+       <ShowForm
+       shows={this.state.shows}
+       onShowSelected={this.onShowSelected}
+       />
+       <ShowList
+       shows={this.state.shows}
+       onShowDelete={this.onShowDelete}
+       />
+
+       </div>
+     );
+   }
+ }
+ export default ShowContainer;
