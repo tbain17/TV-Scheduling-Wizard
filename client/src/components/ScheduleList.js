@@ -5,7 +5,7 @@ const ScheduleList = ({ schedule, onScheduleDelete }) => {
   const scheduleItemNodes = schedule.map(scheduleItem => (
     <ScheduleItem
     key={scheduleItem._id}
-    show={scheduleItem}
+    scheduleItem={scheduleItem}
     onScheduleDelete={onScheduleDelete}></ScheduleItem>
   ));
 
