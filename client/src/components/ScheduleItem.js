@@ -6,7 +6,7 @@ const ScheduleItem = ({scheduleItem, onScheduleDelete}) => {
     <h3>{schedule.name}</h3>
     <h3>{schedule.schedule.days.map((day) => {return `${day} `})}</h3>
     <p>{schedule.schedule.time}</p>
-    <button onClick={() => onScheduleDelete(schedule)}>Remove from Schedule</button>
+    <button onClick={() => onScheduleDelete(schedule._id)}>Remove from Schedule</button>
     </div>
   );
 };

@@ -32,7 +32,7 @@ class ShowContainer extends React.Component {
     this.setState({ selectedShowName: name })
   }
 
-  onScheduleDelete() {
+  onScheduleDelete(id) {
     return null;
   }
 
