@@ -12,11 +12,13 @@ class ShowContainer extends React.Component {
     this.state = {
       schedule: [],
       shows: [],
+      filteredShows: [],
       selectedShowName: ''
     }
     this.handleShowSelected = this.handleShowSelected.bind(this);
     this.onShowAdded = this.onShowAdded.bind(this);
     this.onScheduleDelete = this.onScheduleDelete.bind(this);
+    this.onTimeSelected = this.onTimeSelected.bind(this);
   }
 
   componentDidMount() {
@@ -40,8 +42,9 @@ class ShowContainer extends React.Component {
       .then(schedule => this.setState({ schedule }));
   }
 
-  onShowSelected() {
-     return null;
+  onTimeSelected(time) {
+     const filteredShows = this.state.shows.filter(show => show.schedule.time === time);
+     this.setState({filteredShows: filteredShows})
   }
 
   onShowAdded(showData) {
@@ -60,6 +63,7 @@ class ShowContainer extends React.Component {
    if (!this.state.shows.length) return null;
 
    return (
+
      <section id="grid">
           <div className="logo">
           <header>LOGO</header>
@@ -74,6 +78,8 @@ class ShowContainer extends React.Component {
             <ShowList
             shows={this.state.shows}
             onShowAdded={this.onShowAdded}
+            filteredShows={this.state.filteredShows}
+
             />
           </div>
           <div className="schedule-list">
@@ -86,8 +92,9 @@ class ShowContainer extends React.Component {
             <div className="footer">
             </div>
 
-          </section>
 
+
+    </section>
    );
  }
 }

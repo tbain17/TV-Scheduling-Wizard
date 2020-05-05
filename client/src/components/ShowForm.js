@@ -12,16 +12,14 @@ import React from 'react';
     })
 
   function handleChange(event) {
-    props.onShowSelected(event.target.value);
+    props.onTimeSelected(event.target.value);
   }
 
   return (
-    <body id="grid" >
-    <select id="show-selector" onChange={handleChange} defaultValue="default">
+    <select id="time-selector" onChange={handleChange} defaultValue="default">
       <option disabled value="default">Choose a time...</option>
       {options}
     </select>
-    </body>
   )
 }
 
