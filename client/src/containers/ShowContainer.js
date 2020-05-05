@@ -15,6 +15,7 @@ class ShowContainer extends React.Component {
     }
     this.handleShowSelected = this.handleShowSelected.bind(this);
     this.onShowAdded = this.onShowAdded.bind(this);
+    this.onScheduleDelete = this.onScheduleDelete.bind(this);
   }
 
   componentDidMount() {
