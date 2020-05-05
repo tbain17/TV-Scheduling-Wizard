@@ -13,9 +13,9 @@ app.use(bodyParser.json());
 MongoClient.connect('mongodb://localhost:27017')
   .then((client) => {
     const db = client.db('shows');
-    const showsCollection = db.collection('schedule');
-    const showsRouter = createRouter(showsCollection);
-    app.use('/api/shows', showsRouter);
+    const scheduleCollection = db.collection('schedule');
+    const scheduleRouter = createRouter(scheduleCollection);
+    app.use('/api/schedule', scheduleRouter);
   })
   .catch(console.err);
 
