@@ -3,6 +3,7 @@ import ShowList from '../components/ShowList'
 import ShowForm from '../components/ShowForm'
 import Schedule from '../Models/schedule';
 import ScheduleList from '../components/ScheduleList';
+import './Showcontainer.css';
 
 
 class ShowContainer extends React.Component {
@@ -59,22 +60,34 @@ class ShowContainer extends React.Component {
    if (!this.state.shows.length) return null;
 
    return (
-     <div>
-     <h2>Show Container</h2>
-     <ShowForm
-     shows={this.state.shows}
-     onShowSelected={this.onShowSelected}
-     />
-     <ShowList
-     shows={this.state.shows}
-     onShowAdded={this.onShowAdded}
-     />
-     <ScheduleList
-     schedule={this.state.schedule}
-     onScheduleDelete={this.onScheduleDelete}
-     />
+     <section id="grid">
+          <div className="logo">
+          <header>LOGO</header>
+          </div>
+          <div className="show-form">
+            <ShowForm
+            shows={this.state.shows}
+            onShowSelected={this.onShowSelected}
+            />
+          </div>
+          <div className="show-list">
+            <ShowList
+            shows={this.state.shows}
+            onShowAdded={this.onShowAdded}
+            />
+          </div>
+          <div className="schedule-list">
+            <ScheduleList
+            schedule={this.state.schedule}
+            onScheduleDelete={this.onScheduleDelete}
+            />
+            <h1>ScheduleList</h1>
+          </div>
+            <div className="footer">
+            </div>
 
-     </div>
+          </section>
+
    );
  }
 }

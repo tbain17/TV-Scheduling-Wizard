@@ -16,10 +16,12 @@ import React from 'react';
   }
 
   return (
+    <body id="grid" >
     <select id="show-selector" onChange={handleChange} defaultValue="default">
       <option disabled value="default">Choose a time...</option>
       {options}
     </select>
+    </body>
   )
 }
 
