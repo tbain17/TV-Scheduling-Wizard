@@ -33,7 +33,8 @@ class ShowContainer extends React.Component {
   }
 
   onScheduleDelete(id) {
-    return null;
+    Schedule.delete(id)
+      .then(schedule => this.setState({ schedule }));
   }
 
   onShowSelected() {
