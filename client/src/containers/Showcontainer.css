@@ -12,9 +12,11 @@
 }
 
 .logo-wizard  {
-  width: 15%;
-  /* border: 1px solid black; */
-  /* padding-bottom: 100px; */
+  position: relative;
+  width: 700px;
+  bottom: 165px;
+
+  /* width: 45%; */
 }
 
 .show-form {
