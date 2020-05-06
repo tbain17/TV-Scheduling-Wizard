@@ -3,7 +3,7 @@ import React from 'react';
 
 const Show = ({show, onShowAdded}) => {
   const summary = show.summary
-  const summaryEdited = summary.replace(/<p></p>/g,'')
+  const summaryEdited = summary.replace(/<[^>]*>/g,'')
   return(
     <div className="Show">
     <h3><a href={show.url}>{show.name}</a></h3>
