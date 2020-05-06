@@ -85,6 +85,7 @@ class ShowContainer extends React.Component {
           <header><img className="logo-wizard" src={image} alt="image"></img></header>
           </div>
           <div className="show-form">
+          <h1>Show Filter</h1>
             <ShowForm
             shows={this.state.shows}
             onTimeSelected={this.onTimeSelected}
@@ -94,6 +95,7 @@ class ShowContainer extends React.Component {
             />
           </div>
           <div className="show-list">
+          <h1>Show List</h1>
             <ShowList
             shows={this.state.shows}
             onShowAdded={this.onShowAdded}
@@ -102,18 +104,12 @@ class ShowContainer extends React.Component {
             />
           </div>
           <div className="schedule-list">
-          <h1>ScheduleList</h1>
+          <h1>My Schedule</h1>
             <ScheduleList
             schedule={this.state.schedule}
             onScheduleDelete={this.onScheduleDelete}
             />
-
           </div>
-            <div className="footer">
-            </div>
-
-
-
     </section>
    );
  }

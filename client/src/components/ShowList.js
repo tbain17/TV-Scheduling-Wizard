@@ -16,7 +16,7 @@ const ShowList = ({ shows, onShowAdded, filteredShows , filteredShowsbyGenre}) =
   ));
 
   return (
-    <div id="showList">
+    <div id="show-list">
     {showNodes}
     </div>
   )

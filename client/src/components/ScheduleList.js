@@ -11,7 +11,7 @@ const ScheduleList = ({ schedule, onScheduleDelete }) => {
   ));
 
   return (
-    <div id="scheduleList" className="schedule-item">
+    <div id="scheduleList" className="schedule-list">
     {scheduleItemNodes}
     </div>
   )
