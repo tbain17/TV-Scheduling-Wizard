@@ -7,7 +7,7 @@ const Show = ({show, onShowAdded}) => {
   return(
     <div className="show">
     <h1>{show.name}</h1>
-    <img src={show.image.medium} alt=""/>
+    <img className="show-images" src={show.image.medium} alt=""/>
     <h4>{summaryEdited}</h4>
     <h3><a href={show.url} target='_blank'>More Information</a></h3>
     <h3>{show.schedule.days.map((day) => {return `${day} `})}</h3>

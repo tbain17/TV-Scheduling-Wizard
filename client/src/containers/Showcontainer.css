@@ -16,7 +16,6 @@
   width: 700px;
   bottom: 165px;
 
-  /* width: 45%; */
 }
 
 .show-form {
@@ -49,7 +48,7 @@
 h1 {
   font-size: 40px;
 }
-img {
+.show-images {
   border: 1px solid black;
 }
 
@@ -85,4 +84,9 @@ button {
   font-size: 16px;
   height: 30px;
   border-radius: 10px;
+}
+
+.red {
+  color: red;
+  font-weight: bold;
 }
