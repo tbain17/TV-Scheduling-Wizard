@@ -16,7 +16,7 @@ import React from 'react';
       }})})
 
 
-    const options = uniqueTimes.map(time => {
+    const options = uniqueTimes.sort().map(time => {
       return <option value={time} >{time}</option>
     })
 
