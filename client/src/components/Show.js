@@ -11,7 +11,7 @@ const Show = ({show, onShowAdded}) => {
     <h3>{show.network?.name}</h3>
     <img className="show-images" src={show.image.medium} alt=""/>
     <h4>{summaryEdited}</h4>
-    <h3><a href={show.url} target='_blank'>More Information</a></h3>
+    <h4><a href={show.url} target='_blank'>More Information</a></h4>
 
     <button onClick={() => onShowAdded(show)}>Add to Schedule</button>
     </div>

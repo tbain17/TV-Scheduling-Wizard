@@ -48,6 +48,11 @@
 h1 {
   font-size: 40px;
 }
+
+h4 {
+  font-weight: normal;
+}
+
 .show-images {
   border: 1px solid black;
 }
