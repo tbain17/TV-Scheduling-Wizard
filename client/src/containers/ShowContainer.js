@@ -4,6 +4,7 @@ import ShowForm from '../components/ShowForm'
 import Schedule from '../Models/schedule';
 import ScheduleList from '../components/ScheduleList';
 import './Showcontainer.css';
+import image from './TVwizard2.png';
 
 
 class ShowContainer extends React.Component {
@@ -74,7 +75,7 @@ class ShowContainer extends React.Component {
 
      <section id="grid">
           <div className="logo">
-          <header>LOGO</header>
+          <header><img className="logo-wizard" src={image} alt="image"></img></header>
           </div>
           <div className="show-form">
             <ShowForm

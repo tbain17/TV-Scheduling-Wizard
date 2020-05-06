@@ -6,12 +6,16 @@
 
 .logo {
   grid-column: 1/4;
-  height: 10rem;
+  height: 20rem;
   border: 1px solid black;
-  background-color: lightgrey;
-  font-size: 100px;
+  background-color: black;
 }
 
+.logo-wizard  {
+  width: 25%;
+  border: 1px solid black;
+  /* padding-bottom: 100px; */
+}
 
 .show-form {
   border: 1px solid black;
@@ -44,4 +48,5 @@
   background-color: orange;
   padding: 10px;
   margin: 10px;
+  border: 1px solid black;
 }
