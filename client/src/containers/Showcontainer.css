@@ -36,11 +36,19 @@
 }
 
 .show h1 {
+  font-size: 30px;
   margin-top: 0px;
 }
 
 .show-list {
     border-right: 1px solid black;
+}
+
+h1 {
+  font-size: 40px;
+}
+img {
+  border: 1px solid black;
 }
 
 .footer {
