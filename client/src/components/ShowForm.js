@@ -62,6 +62,7 @@ import React from 'react';
       <option disabled value="default">Choose a Time...</option>
       {options}
     </select>
+    <label>Choose a genre: </label>
     <select id="genre-selector" onChange={handleGenreChange} defaultValue="default">
       <option disabled value="default">Choose a genre...</option>
       {optionsGenres}
