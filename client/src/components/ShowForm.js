@@ -9,12 +9,6 @@ import React from 'react';
         uniqueTimes = [...uniqueTimes, show.schedule.time]
       )})
 
-    // props.shows.forEach(show => {
-    //   show.schedule.days.forEach(day => {
-    //   if (!days.includes(day)) {
-    //     days = [...days, day]
-    //   }})})
-
     props.shows.forEach(show => {
       show.genres.forEach(genre => {
       if (!genres.includes(genre)) {
