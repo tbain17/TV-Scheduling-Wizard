@@ -5,7 +5,7 @@ const Show = ({show, onShowAdded}) => {
   const summary = show.summary
   const summaryEdited = summary.replace(/<[^>]*>/g,'')
   return(
-    <div className="Show">
+    <div className="show">
     <h3><a href={show.url} target='_blank'>{show.name}</a></h3>
     <img src={show.image.medium} alt=""/>
     <h4>{summaryEdited}</h4>
