@@ -1,10 +1,12 @@
 import React from 'react';
 import Show from './Show';
 
-const ShowList = ({ shows, onShowAdded, filteredShows }) => {
+const ShowList = ({ shows, onShowAdded, filteredShows , filteredShowsbyGenre}) => {
   let givenShows = shows
   if (filteredShows.length) {
     givenShows = filteredShows
+  } else if (filteredShowsbyGenre.length) {
+    givenShows = filteredShowsbyGenre
   }
   const showNodes = givenShows.map(show => (
     <Show
