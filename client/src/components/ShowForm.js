@@ -1,9 +1,9 @@
 import React from 'react';
 
   const ShowForm = (props) => {
-    let uniqueTimes = []
-    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    let genres = ["no selection"]
+    let uniqueTimes = ["No Selection"]
+    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "No Selection"]
+    let genres = ["No Selection"]
     props.filteredShows.forEach(show => {
       if (show.schedule.time && !uniqueTimes.includes(show.schedule.time)) (
         uniqueTimes = [...uniqueTimes, show.schedule.time]
