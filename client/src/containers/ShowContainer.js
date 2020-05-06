@@ -16,6 +16,7 @@ class ShowContainer extends React.Component {
       filteredShows: [],
       day: "",
       time: "",
+      genre: "",
       selectedShowName: ''
     }
     this.handleShowSelected = this.handleShowSelected.bind(this);
@@ -23,6 +24,7 @@ class ShowContainer extends React.Component {
     this.onScheduleDelete = this.onScheduleDelete.bind(this);
     this.onTimeSelected = this.onTimeSelected.bind(this);
     this.onDaySelected = this.onDaySelected.bind(this);
+    this.onGenreSelected = this.onGenreSelected.bind(this);
   }
 
   componentDidMount() {
@@ -52,6 +54,9 @@ class ShowContainer extends React.Component {
   onDaySelected(day) {
      this.setState({day: day});
   }
+  onGenreSelected(genre) {
+     this.setState({genre: genre});
+  }
 
   onShowAdded(showData) {
     const ids = this.state.schedule.map(show => {
@@ -70,6 +75,8 @@ class ShowContainer extends React.Component {
    const filteredShowsbyDay= this.state.shows.filter(show => show.schedule.days.includes(this.state.day))
    const filteredShowsbyTimeDay = this.state.shows.filter(show =>
    show.schedule.time === this.state.time && show.schedule.days.includes(this.state.day))
+   const filteredShowsbyGenre = this.state.shows.filter(show =>
+   show.genres.includes(this.state.genre))
 
    return (
 
@@ -83,6 +90,7 @@ class ShowContainer extends React.Component {
             onTimeSelected={this.onTimeSelected}
             onDaySelected={this.onDaySelected}
             filteredShows={filteredShowsbyDay}
+            onGenreSelected={this.onGenreSelected}
             />
           </div>
           <div className="show-list">
@@ -90,6 +98,7 @@ class ShowContainer extends React.Component {
             shows={this.state.shows}
             onShowAdded={this.onShowAdded}
             filteredShows={filteredShowsbyTimeDay}
+            filteredShowsbyGenre={filteredShowsbyGenre}
             />
           </div>
           <div className="schedule-list">
