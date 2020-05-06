@@ -34,12 +34,17 @@ import React from 'react';
 
   return (
     <div>
+    <h1>Filter Shows</h1>
+    <p>Filter shows by day and time, or by genre: </p>
+    <label>Choose a Day: </label>
     <select id="day-selector" onChange={handleDayChange} defaultValue="default">
-      <option disabled value="default">Choose a day...</option>
+      <option disabled value="default">Choose a Day...</option>
       {optionsDays}
     </select>
+    <br></br>
+    <label>Choose a Time: </label>
     <select id="time-selector" onChange={handleTimeChange} defaultValue="default">
-      <option disabled value="default">Choose a time...</option>
+      <option disabled value="default">Choose a Time...</option>
       {options}
     </select>
 

@@ -92,11 +92,12 @@ class ShowContainer extends React.Component {
             />
           </div>
           <div className="schedule-list">
+          <h1>ScheduleList</h1>
             <ScheduleList
             schedule={this.state.schedule}
             onScheduleDelete={this.onScheduleDelete}
             />
-            <h1>ScheduleList</h1>
+
           </div>
             <div className="footer">
             </div>
