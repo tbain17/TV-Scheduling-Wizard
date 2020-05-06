@@ -3,7 +3,7 @@ import React from 'react';
   const ShowForm = (props) => {
     let uniqueTimes = []
     let days = []
-    let genres = []
+    let genres = ["no selection"]
     props.filteredShows.forEach(show => {
       if (!uniqueTimes.includes(show.schedule.time)) (
         uniqueTimes = [...uniqueTimes, show.schedule.time]
@@ -31,8 +31,9 @@ import React from 'react';
     })
 
     const optionsGenres = genres.map(genre => {
+      if (!props.filteredShows.length) {
       return <option value={genre}>{genre}</option>
-    })
+    }})
 
   function handleTimeChange(event) {
     props.onTimeSelected(event.target.value);
