@@ -1,5 +1,6 @@
 import React from 'react';
 import ScheduleItem from './ScheduleItem';
+import '../containers/Showcontainer.css';
 
 const ScheduleList = ({ schedule, onScheduleDelete }) => {
   const scheduleItemNodes = schedule.map(scheduleItem => (
@@ -10,7 +11,7 @@ const ScheduleList = ({ schedule, onScheduleDelete }) => {
   ));
 
   return (
-    <div id="scheduleList">
+    <div id="scheduleList" className="schedule-item">
     {scheduleItemNodes}
     </div>
   )

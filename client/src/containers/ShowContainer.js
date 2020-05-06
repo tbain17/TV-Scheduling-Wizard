@@ -3,6 +3,7 @@ import ShowList from '../components/ShowList'
 import ShowForm from '../components/ShowForm'
 import Schedule from '../Models/schedule';
 import ScheduleList from '../components/ScheduleList';
+import './Showcontainer.css';
 
 
 class ShowContainer extends React.Component {
@@ -85,25 +86,39 @@ class ShowContainer extends React.Component {
      // show.schedule.time === this.state.time)
 
    return (
-     <div>
-     <h2>Show Container</h2>
-     <ShowForm
-     shows={this.state.shows}
-     onTimeSelected={this.onTimeSelected}
-     onDaySelected={this.onDaySelected}
-     filteredShows={filteredShowsbyDay}
-     />
-     <ShowList
-     shows={this.state.shows}
-     onShowAdded={this.onShowAdded}
-     filteredShows={filteredShowsbyTimeDay}
-     />
-     <ScheduleList
-     schedule={this.state.schedule}
-     onScheduleDelete={this.onScheduleDelete}
-     />
 
-     </div>
+     <section id="grid">
+          <div className="logo">
+          <header>LOGO</header>
+          </div>
+          <div className="show-form">
+            <ShowForm
+            shows={this.state.shows}
+            onTimeSelected={this.onTimeSelected}
+            onDaySelected={this.onDaySelected}
+            filteredShows={filteredShowsbyDay}
+            />
+          </div>
+          <div className="show-list">
+            <ShowList
+            shows={this.state.shows}
+            onShowAdded={this.onShowAdded}
+            filteredShows={filteredShowsbyTimeDay}
+            />
+          </div>
+          <div className="schedule-list">
+            <ScheduleList
+            schedule={this.state.schedule}
+            onScheduleDelete={this.onScheduleDelete}
+            />
+            <h1>ScheduleList</h1>
+          </div>
+            <div className="footer">
+            </div>
+
+
+
+    </section>
    );
  }
 }

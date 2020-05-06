@@ -4,11 +4,13 @@ import ShowContainer from './containers/ShowContainer'
 
 function App() {
   return (
+    <body>
+
     <div className="App">
-    <h1>tests</h1>
     <ShowContainer/>
 
     </div>
+    </body>
   );
 }
 
