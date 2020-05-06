@@ -99,6 +99,7 @@ class ShowContainer extends React.Component {
             <ShowList
             shows={this.state.shows}
             onShowAdded={this.onShowAdded}
+            filteredShowsbyDay={filteredShowsbyDay}
             filteredShows={filteredShowsbyTimeDay}
             filteredShowsbyGenre={filteredShowsbyGenre}
             />
