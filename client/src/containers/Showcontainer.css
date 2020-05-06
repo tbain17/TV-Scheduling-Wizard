@@ -13,8 +13,9 @@
 
 .logo-wizard  {
   position: relative;
-  bottom: 160px;
-  
+  width: 700px;
+  bottom: 165px;
+
   /* width: 45%; */
 }
 
