@@ -6,7 +6,7 @@ const Show = ({show, onShowAdded}) => {
   const summaryEdited = summary.replace(/<[^>]*>/g,'')
   return(
     <div className="Show">
-    <h3><a href={show.url}>{show.name}</a></h3>
+    <h3><a href={show.url} target='_blank'>{show.name}</a></h3>
     <img src={show.image.medium} alt=""/>
     <h4>{summaryEdited}</h4>
     <h3>{show.schedule.days.map((day) => {return `${day} `})}</h3>
