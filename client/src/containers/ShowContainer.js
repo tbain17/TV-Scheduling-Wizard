@@ -12,12 +12,18 @@ class ShowContainer extends React.Component {
       schedule: [],
       shows: [],
       filteredShows: [],
+      filteredShowsbyTime: [],
+      filteredShowsbyDay: [],
+      day: "",
+      time: "",
       selectedShowName: ''
     }
     this.handleShowSelected = this.handleShowSelected.bind(this);
     this.onShowAdded = this.onShowAdded.bind(this);
     this.onScheduleDelete = this.onScheduleDelete.bind(this);
     this.onTimeSelected = this.onTimeSelected.bind(this);
+    this.onDaySelected = this.onDaySelected.bind(this);
+    // this.dayTimeFilter = this.dayTimeFilter.bind(this);
   }
 
   componentDidMount() {
@@ -42,9 +48,21 @@ class ShowContainer extends React.Component {
   }
 
   onTimeSelected(time) {
-     const filteredShows = this.state.shows.filter(show => show.schedule.time === time);
-     this.setState({filteredShows: filteredShows})
+     const filteredShowsbyTime = this.state.shows.filter(show => show.schedule.time === time);
+     this.setState({filteredShowsbyTime: filteredShowsbyTime})
+     this.setState({time: time});
   }
+  onDaySelected(day) {
+     const filteredShowsbyDay = this.state.shows.filter(show => show.schedule.days.includes(day));
+     this.setState({day: day});
+     this.setState({filteredShowsbyDay: filteredShowsbyDay});
+  }
+
+  // dayTimeFilter() {
+  // const filteredShows = this.state.shows.filter(show =>
+  //   show.schedule.days.includes(this.state.day) && show.schedule.time === this.state.time)
+  //   this.setState({filteredShows: filteredShows})
+  // }
 
   onShowAdded(showData) {
     const ids = this.state.schedule.map(show => {
@@ -60,6 +78,11 @@ class ShowContainer extends React.Component {
 
  render() {
    if (!this.state.shows.length) return null;
+   const filteredShowsbyDay= this.state.shows.filter(show => show.schedule.days.includes(this.state.day))
+   const filteredShowsbyTimeDay = this.state.shows.filter(show =>
+   show.schedule.time === this.state.time && show.schedule.days.includes(this.state.day))
+     // const filteredShows = filteredShowsbyDay.filter(show =>
+     // show.schedule.time === this.state.time)
 
    return (
      <div>
@@ -67,11 +90,13 @@ class ShowContainer extends React.Component {
      <ShowForm
      shows={this.state.shows}
      onTimeSelected={this.onTimeSelected}
+     onDaySelected={this.onDaySelected}
+     filteredShows={filteredShowsbyDay}
      />
      <ShowList
      shows={this.state.shows}
      onShowAdded={this.onShowAdded}
-     filteredShows={this.state.filteredShows}
+     filteredShows={filteredShowsbyTimeDay}
      />
      <ScheduleList
      schedule={this.state.schedule}

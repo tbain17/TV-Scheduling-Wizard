@@ -2,10 +2,11 @@ import React from 'react';
 import Show from './Show';
 
 const ShowList = ({ shows, onShowAdded, filteredShows }) => {
+  let givenShows = shows
   if (filteredShows.length) {
-    shows = filteredShows
+    givenShows = filteredShows
   }
-  const showNodes = shows.map(show => (
+  const showNodes = givenShows.map(show => (
     <Show
     key={show._id}
     show={show}
