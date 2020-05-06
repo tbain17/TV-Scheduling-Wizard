@@ -1,10 +1,12 @@
 import React from 'react';
 import Show from './Show';
 
-const ShowList = ({ shows, onShowAdded, filteredShows , filteredShowsbyGenre}) => {
+const ShowList = ({ shows, onShowAdded, filteredShows , filteredShowsbyGenre, filteredShowsbyDay}) => {
   let givenShows = shows
   if (filteredShows.length) {
     givenShows = filteredShows
+  } else if (filteredShowsbyDay.length) {
+    givenShows = filteredShowsbyDay
   } else if (filteredShowsbyGenre.length) {
     givenShows = filteredShowsbyGenre
   }
