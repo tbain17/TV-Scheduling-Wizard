@@ -50,20 +50,20 @@ import React from 'react';
   return (
     <div>
     <p>Filter shows by day and time: </p>
-    <label>Choose a Day: </label>
+    <label>Day: </label>
     <select id="day-selector" onChange={handleDayChange} defaultValue="default">
       <option disabled value="default">Choose a Day...</option>
       {optionsDays}
     </select>
     <br></br>
-    <label>Choose a Time: </label>
+    <label>Time: </label>
     <select id="time-selector" onChange={handleTimeChange} defaultValue="default">
       <option disabled value="default">Choose a Time...</option>
       {options}
     </select>
     <br></br>
     <p>Or by genre:</p>
-    <label>Choose a Genre: </label>
+    <label>Genre: </label>
     <select id="genre-selector" onChange={handleGenreChange} defaultValue="default">
       <option disabled value="default">Choose a Genre...</option>
       {optionsGenres}
