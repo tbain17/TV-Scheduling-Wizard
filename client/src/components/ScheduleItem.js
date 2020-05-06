@@ -7,7 +7,7 @@ const ScheduleItem = ({scheduleItem, onScheduleDelete, clashMessage}) => {
     <p>{scheduleItem.schedule.days.map((day) => {return `${day} `})}</p>
     <p>{scheduleItem.schedule.time}</p>
     <p>{scheduleItem.network?.name}</p>
-    <p>{clashMessage}</p>
+    <p className="red">{clashMessage}</p>
     <button onClick={() => onScheduleDelete(scheduleItem._id)}>Remove from Schedule</button>
     </div>
   );
