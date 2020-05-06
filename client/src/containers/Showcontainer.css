@@ -74,6 +74,7 @@ h1 {
 select {
 font-size: 16px;
 margin: 10px;
+width: 160px;
 }
 
 body {
@@ -89,4 +90,21 @@ button {
 .red {
   color: red;
   font-weight: bold;
+}
+
+a {
+  font-size: 16px;
+}
+
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: blue;
+}
+
+a:hover {
+  text-decoration: none;
+  color: red;
 }

@@ -43,7 +43,7 @@ import React from 'react';
 
   return (
     <div>
-    <p>Filter shows by day and time: </p>
+    <p>Filter by day and time: </p>
     <label>Day: </label>
     <select id="day-selector" onChange={handleDayChange} defaultValue="default">
       <option disabled value="default">Choose a Day...</option>
@@ -56,7 +56,7 @@ import React from 'react';
       {options}
     </select>
     <br></br>
-    <p>Or by genre:</p>
+    <p>Or filter by genre:</p>
     <label>Genre: </label>
     <select id="genre-selector" onChange={handleGenreChange} defaultValue="default">
       <option disabled value="default">Choose a Genre...</option>
