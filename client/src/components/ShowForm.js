@@ -1,4 +1,6 @@
 import React from 'react';
+import image from './wizard-head.png';
+
 
   const ShowForm = (props) => {
     let uniqueTimes = ["No Selection"]
@@ -62,6 +64,7 @@ import React from 'react';
       <option disabled value="default">Choose a Genre...</option>
       {optionsGenres}
     </select>
+    <img className="wizard-head" src={image}></img>
     </div>
   )
 }

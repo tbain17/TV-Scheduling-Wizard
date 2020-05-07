@@ -49,6 +49,14 @@ h1 {
   font-size: 40px;
 }
 
+.wizard-head {
+  position: relative;
+  top: 100px;
+  width:300px;
+  opacity: 85%;
+}
+
+
 .show-images {
   border: 1px solid black;
 }
