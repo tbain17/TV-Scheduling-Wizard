@@ -4,7 +4,7 @@ import React from 'react';
   const ShowForm = (props) => {
     let uniqueTimes = ["No Selection"]
     let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "No Selection"]
-    let genres = ["No Selection"]
+    let genres = ["- No Selection -"]
     props.filteredShows.forEach(show => {
       if (show.schedule.time && !uniqueTimes.includes(show.schedule.time)) (
         uniqueTimes = [...uniqueTimes, show.schedule.time]
@@ -25,7 +25,7 @@ import React from 'react';
       return <option value={day} >{day}</option>
     })
 
-    const optionsGenres = genres.map(genre => {
+    const optionsGenres = genres.sort().map(genre => {
       if (!props.filteredShows.length) {
       return <option value={genre}>{genre}</option>
     }})
